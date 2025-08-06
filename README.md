@@ -1,53 +1,84 @@
-## TECH STACK USED:
-Frontend: Vite-react
-Backend: Express Nodejs
-Database: MONGODB
+# Mini LinkedIn - Complete Setup Guide
 
-## BACKEND SETUP COMMANDS
-# 1. Create project structure
+A full-stack Mini LinkedIn-like community platform built with React (Vite), Node.js (Express), and MongoDB.
+
+## Features
+
+- ✅ User Authentication (Register/Login)
+- ✅ User Profiles with Bio
+- ✅ Create & View Posts
+- ✅ Like & Comment System
+- ✅ Protected Routes
+- ✅ Responsive Design
+- ✅ Real-time Interactions
+
+## Tech Stack
+
+**Frontend:**
+- React 18 with Vite
+- React Router DOM
+- Tailwind CSS
+- Axios for API calls
+- React Hook Form with Yup validation
+- React Hot Toast for notifications
+
+**Backend:**
+- Node.js with Express
+- MongoDB with Mongoose
+- JWT Authentication
+- bcryptjs for password hashing
+- CORS, Helmet for security
+
+## Setup Instructions
+
+### Backend Setup
+
+1. Create project structure
 mkdir mini-linkedin
 cd mini-linkedin
 mkdir backend
 cd backend
 
-# 2. Initialize Node.js project
+2. Initialize Node.js project
 npm init -y
 
-# 3. Install backend dependencies
+3. Install backend dependencies
 npm install express mongoose bcryptjs jsonwebtoken cors dotenv helmet morgan express-rate-limit express-validator
 
-# 4. Install development dependencies
+4. Install development dependencies
 npm install -D nodemon concurrently
 
-# 5. Create folder structure
+5. Create folder structure
 mkdir config controllers middleware models routes utils
 
-# 6. Deploy backend to Vercel (after creating all files)
+6. Deploy backend to Vercel (after creating all files)
 npm i -g vercel
 vercel --prod
 
 
-## FRONTEND SETUP COMMANDS
-# 1. Go back to root and create frontend
+### Frontend Setup
+
+1. Go back to root and create frontend
 cd ..
 npm create vite@latest frontend -- --template react
 cd frontend
 
-# 2. Install frontend dependencies
+2. Install frontend dependencies
 npm install react-router-dom axios react-hook-form @hookform/resolvers yup react-hot-toast date-fns
 
-# 3. Install UI/Styling dependencies
-npm install tailwindcss @tailwindcss/forms @tailwindcss/typography autoprefixer postcss lucide-react
+3. Install UI/Styling dependencies
+npm install tailwindcss@3 @tailwindcss/forms @tailwindcss/typography autoprefixer postcss lucide-react
 
-# 4. Install development dependencies
+4. Install development dependencies
 npm install -D @types/node
 
-# 5. Initialize Tailwind CSS
+5. Initialize Tailwind CSS
 npx tailwindcss init -p
 
-# 6. Create folder structure
+6. Create folder structure
 mkdir -p src/components/common src/components/auth src/components/posts src/components/profile
 mkdir -p src/pages src/context src/utils src/hooks
 
-# 7. Deploy frontend to Vercel (after updating .env.production with backend URL)
+7. Deploy frontend to Vercel (after updating .env.production with backend URL)
 vercel --prod
+
